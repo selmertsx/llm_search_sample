@@ -18,16 +18,22 @@ async function main() {
     }),
   });
 
+  const rawResult = await agent.generate(
+    "github accountのaccount名がselmertsxという人がいます。この人の本名と所属会社、所属部署を教えてください"
+  );
+
   const prompt: Message = {
     id: "1",
     role: "user",
-    content:
-      "github accountのaccount名がselmertsxという人がいます。この人の本名と所属会社、所属部署を教えてください",
+    content: `これからある人物に関して検索したテキストを渡す。ここから指定されたフォーマットに従い、その人物の情報を抽出してください。
+    検索したテキスト: ${rawResult.text}
+    `,
   };
 
   const result = await agent.generate([prompt], {
     output: PersonInfoSchema,
   });
+
   console.log(result);
 }
 
