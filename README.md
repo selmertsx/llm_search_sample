@@ -1,2 +1,13 @@
-Mastra Deep Research
+# LLM Search Experiment
 
+## このリポジトリの目的
+
+- 業務の中でLLM Modelを用いた検索をするニーズが出てくるときに備えた素振り
+- まずは Next.js 単体で完結する仕組みで実装する
+
+## 素振り手順
+
+- いきなりサービスを作るのではなく、Agent単体で動作確認する。
+  - `yarn tsx scripts/search_with_mastra.ts`
+- 上記で適切な精度が出たらフロントエンドアプリケーションにつなぎ込んで使い勝手を確認する
+- 良さそうならCache等々、ちゃんとサービスで使うための仕組みも実装する
