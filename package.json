@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ai-sdk/google": "^1.2.17",
     "mastra": "^0.6.2",
     "next": "15.3.2",
     "react": "^19.0.0",
