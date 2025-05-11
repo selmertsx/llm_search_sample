@@ -43,15 +43,13 @@ ${rawText}`,
 export async function getOssUsedByCompanies(
   libraryName: string
 ): Promise<string> {
-  console.log(`[Action] Searching companies for library: ${libraryName}`);
   const result = await searchAndExtractInfo(
     libraryName,
     UsedByCompaniesSchema,
     rawSearchPromptForCompanies,
     extractionPromptForCompanies,
     "OssUsedByCompaniesAgent",
-    "You are an AI assistant specialized in identifying companies that use specific open source software libraries." // Agent指示
+    "You are an AI assistant specialized in identifying companies that use specific open source software libraries."
   );
-
   return JSON.stringify(result.usedByCompanies);
 }

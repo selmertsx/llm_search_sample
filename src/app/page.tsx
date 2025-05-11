@@ -42,7 +42,7 @@ export default function Home() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: 2, // 要素間のスペース
+          gap: 2,
         }}
       >
         <Typography component="h1" variant="h5" gutterBottom>
@@ -66,17 +66,7 @@ export default function Home() {
           {loading ? <CircularProgress size={24} /> : "検索"}
         </Button>
 
-        {result && (
-          <Box sx={{ width: "100%", mt: 2 }}>
-            <>
-              <Typography variant="h6" gutterBottom>
-                利用企業リスト:
-              </Typography>
-              {result.text}
-            </>
-            )
-          </Box>
-        )}
+        {result && <Box sx={{ width: "100%", mt: 2 }}>{result.text}</Box>}
       </Box>
     </Container>
   );

@@ -20,8 +20,12 @@ export async function searchAndExtractInfo<
       useSearchGrounding: true,
     }),
   });
+
   const rawSearchPrompt = rawSearchPromptTemplate(itemName);
   const rawResult = await agent.generate(rawSearchPrompt);
+
+  console.log(rawResult);
+
   const rawText =
     typeof rawResult.text === "string"
       ? rawResult.text
@@ -30,5 +34,6 @@ export async function searchAndExtractInfo<
   const structuredResult = await agent.generate(extractionPrompt, {
     output: outputSchema,
   });
+  console.log(structuredResult);
   return structuredResult;
 }
