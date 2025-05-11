@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@ai-sdk/google": "^1.2.17",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^7.1.0",
     "mastra": "^0.6.2",
     "next": "15.3.2",
     "react": "^19.0.0",
